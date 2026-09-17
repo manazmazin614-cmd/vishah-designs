@@ -1,0 +1,8 @@
+{
+  "name": "vishah-design",
+  "version": "1.0.0",
+  "description": "Simple storefront for Vishah Design",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

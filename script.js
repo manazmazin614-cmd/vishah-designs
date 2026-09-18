@@ -432,8 +432,9 @@ function renderCheckoutPage() {
       });
       const result = await response.json();
       if (!response.ok) throw new Error(result.message || 'Could not place the order.');
+      if (result.ownerWhatsappUrl) window.open(result.ownerWhatsappUrl, '_blank', 'noopener');
       localStorage.removeItem(cartKey);
-      form.innerHTML = `<div class="success-box"><h3>Thank you.</h3><p>Your order ${result.id} has been placed successfully. We’ll contact you shortly.</p></div>`;
+      form.innerHTML = `<div class="success-box"><h3>Request sent.</h3><p>Your order request ${result.id} has been sent to Vishah for approval. Once approved, the confirmation will be sent to your WhatsApp number.</p></div>`;
       updateHeaderCartCount();
     } catch (error) {
       const message = document.createElement('p');

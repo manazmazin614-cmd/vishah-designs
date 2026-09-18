@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Approve Order | Vishah Design</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <a href="/index.html" class="brand">VISHAH</a>
+    </header>
+    <main class="page-shell policy-shell">
+        <section class="page-hero compact">
+            <p class="eyebrow">OWNER APPROVAL</p>
+            <h1 id="approvalTitle">Reviewing order request.</h1>
+        </section>
+        <section id="approvalContent" class="policy-copy">
+            <p>Checking the secure approval link...</p>
+        </section>
+    </main>
+    <script>
+        const content = document.querySelector('#approvalContent');
+        const title = document.querySelector('#approvalTitle');
+        const token = new URLSearchParams(window.location.search).get('token');
+        fetch(`/api/approve?token=${encodeURIComponent(token || '')}`)
+            .then(response => response.json().then(data => ({ ok: response.ok, data })))
+            .then(({ ok, data }) => {
+                if (!ok) throw new Error(data.message || 'Approval failed.');
+                title.textContent = `Approve order ${data.orderId}`;
+                content.innerHTML = data.buyerWhatsappUrl
+                    ? `<p>The request is ready. Send the confirmation to the buyer on WhatsApp.</p><a class="button" href="${data.buyerWhatsappUrl}" target="_blank" rel="noreferrer">SEND CONFIRMATION ON WHATSAPP ↗</a>`
+                    : '<p>The order is valid, but the buyer phone number is missing.</p>';
+            })
+            .catch(error => {
+                title.textContent = 'Approval unavailable.';
+                content.innerHTML = `<p class="error-message">${error.message}</p>`;
+            });
+    </script>
+</body>
+
+</html>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "cleanUrls": true,
+  "cleanUrls": false,
   "framework": null,
   "buildCommand": "npm run build",
   "outputDirectory": ".",

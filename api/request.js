@@ -4,6 +4,7 @@ const crypto = require('crypto');
 
 const requestLogPath = path.join(__dirname, '..', 'request');
 const whatsappLogPath = path.join(__dirname, '..', 'whatsapp-orders.txt');
+const defaultOwnerWhatsApp = '919995122274';
 
 function readRequestLog() {
   if (!globalThis.__vishahRequests) globalThis.__vishahRequests = [];
@@ -98,8 +99,8 @@ module.exports = (req, res) => {
         message: 'Your order request has been sent for owner approval.',
         buyerWhatsapp: buyerMessage,
         ownerWhatsapp: ownerMessage,
-        ownerPhone: process.env.OWNER_WHATSAPP || '919999999999',
-        ownerWhatsappUrl: `https://wa.me/${process.env.OWNER_WHATSAPP || '919999999999'}?text=${encodeURIComponent(ownerMessage)}`,
+        ownerPhone: process.env.OWNER_WHATSAPP || defaultOwnerWhatsApp,
+        ownerWhatsappUrl: `https://wa.me/${process.env.OWNER_WHATSAPP || defaultOwnerWhatsApp}?text=${encodeURIComponent(ownerMessage)}`,
         approvalUrl
       });
     } catch (error) {

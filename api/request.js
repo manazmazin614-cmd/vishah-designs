@@ -5,17 +5,22 @@ const requestLogPath = path.join(__dirname, '..', 'request');
 const whatsappLogPath = path.join(__dirname, '..', 'whatsapp-orders.txt');
 
 function readRequestLog() {
-  if (!fs.existsSync(requestLogPath)) return [];
+  if (!globalThis.__vishahRequests) globalThis.__vishahRequests = [];
+  if (!fs.existsSync(requestLogPath)) return globalThis.__vishahRequests;
   try {
     const raw = fs.readFileSync(requestLogPath, 'utf8').trim();
-    return raw ? JSON.parse(raw) : [];
+    globalThis.__vishahRequests = raw ? JSON.parse(raw) : globalThis.__vishahRequests;
+    return globalThis.__vishahRequests;
   } catch {
-    return [];
+    return globalThis.__vishahRequests;
   }
 }
 
 function writeRequestLog(entries) {
-  fs.writeFileSync(requestLogPath, JSON.stringify(entries, null, 2));
+  globalThis.__vishahRequests = entries;
+  try {
+    fs.writeFileSync(requestLogPath, JSON.stringify(entries, null, 2));
+  } catch {}
 }
 
 function buildWhatsAppMessages(order) {
@@ -64,7 +69,9 @@ module.exports = (req, res) => {
       writeRequestLog(entries);
 
       const { buyerMessage, ownerMessage } = buildWhatsAppMessages(order);
-      fs.writeFileSync(whatsappLogPath, `BUYER MESSAGE\n${buyerMessage}\n\nBUSINESS OWNER MESSAGE\n${ownerMessage}\n`, 'utf8');
+      try {
+        fs.writeFileSync(whatsappLogPath, `BUYER MESSAGE\n${buyerMessage}\n\nBUSINESS OWNER MESSAGE\n${ownerMessage}\n`, 'utf8');
+      } catch {}
 
       return res.status(201).json({
         id: orderId,

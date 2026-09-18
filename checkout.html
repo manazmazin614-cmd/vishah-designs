@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | Vishah Design</title>
+    <meta name="description" content="Checkout your Vishah Design order securely." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="checkout">
+    <header class="site-header">
+        <a href="index.html" class="brand">VISHAH</a>
+        <nav class="main-nav">
+            <a href="shop.html">Shop</a>
+            <a href="about.html">Our Story</a>
+            <a href="journal.html">Journal</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <a href="shop.html" class="header-icon" aria-label="Search collection">⌕</a>
+            <a href="cart.html" class="header-icon cart-link" aria-label="Cart">BAG <span
+                    id="headerCartCount">0</span></a>
+        </div>
+    </header>
+
+    <main class="page-shell checkout-shell">
+        <section class="page-hero compact">
+            <p class="eyebrow">CHECKOUT</p>
+            <h1>Complete your order</h1>
+        </section>
+        <form id="checkoutFormPage" class="checkout-form-page">
+            <div class="checkout-grid">
+                <div class="checkout-column">
+                    <label>Full name<input name="name" required /></label>
+                    <label>Email<input type="email" name="email" required /></label>
+                    <label>Phone<input type="tel" name="phone" required /></label>
+                    <label>Delivery address<textarea name="address" rows="4" required></textarea></label>
+                    <label>City<input name="city" required /></label>
+                    <label>State<input name="state" required /></label>
+                    <label>Pincode<input name="pincode" required /></label>
+                </div>
+                <aside class="summary-panel">
+                    <h3>Payment summary</h3>
+                    <div class="summary-row"><span>Items</span><strong id="checkoutItemsTotal">₹0</strong></div>
+                    <div class="summary-row"><span>Shipping</span><strong id="checkoutShipping">₹0</strong></div>
+                    <div class="summary-row total"><span>Total</span><strong id="checkoutGrandTotal">₹0</strong></div>
+                    <button type="submit" class="button wide">Place order</button>
+                    <p class="fine-print">Payment option: Cash on delivery. Secure checkout supported by a protected
+                        order flow.</p>
+                </aside>
+            </div>
+        </form>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-brand">VISHAH</div>
+        <p>© 2026 Vishah Design</p>
+        <div class="footer-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.pinterest.com" target="_blank" rel="noreferrer">Pinterest</a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noreferrer">TikTok</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -18,12 +18,31 @@
   <div class="announcement">COMPLIMENTARY SHIPPING IN INDIA <span>•</span> FESTIVE '26 COLLECTION NOW LIVE</div>
   <header class="site-header">
     <button class="menu-button" aria-label="Open menu"><span></span><span></span></button>
-    <a class="wordmark" href="#top" aria-label="Vishah Design home">VISHAH</a>
-    <nav aria-label="Main navigation"><a href="#collection">SHOP</a><a href="#story">OUR STORY</a><a
-        href="#journal">JOURNAL</a></nav>
-    <div class="actions"><button aria-label="Search">⌕</button><button id="bagButton" aria-label="Shopping bag">BAG <sup
-          id="bagCount">0</sup></button></div>
+    <a class="wordmark" href="index.html" aria-label="Vishah Design home">VISHAH</a>
+    <nav aria-label="Main navigation">
+      <a href="shop.html">SHOP</a>
+      <a href="about.html">OUR STORY</a>
+      <a href="journal.html">JOURNAL</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+    <div class="actions">
+      <a href="shop.html" id="searchButton" class="nav-search" aria-label="Search">⌕</a>
+      <a href="cart.html" id="bagButton" aria-label="Shopping bag">BAG <sup id="bagCount">0</sup></a>
+    </div>
   </header>
+
+  <div id="searchPanel" class="search-panel" aria-hidden="true">
+    <div class="search-panel-inner">
+      <div class="search-head">
+        <p>Search the collection</p>
+        <button id="closeSearch" aria-label="Close search">×</button>
+      </div>
+      <div class="search-box">
+        <input id="searchInput" type="text" placeholder="Search lehenga, saree, kurta..." autocomplete="off" />
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </div>
+  </div>
 
   <main id="top">
     <section class="hero">
@@ -32,7 +51,7 @@
       <div class="hero-shade"></div>
       <div class="hero-content">
         <p class="eyebrow light">FESTIVE / 2026</p>
-        <h1>Rooted in<br><em>celebration.</em></h1><a class="button button-light" href="#collection">EXPLORE COLLECTION
+        <h1>Rooted in<br><em>celebration.</em></h1><a class="button button-light" href="shop.html">EXPLORE COLLECTION
           <i>↗</i></a>
       </div>
       <p class="hero-caption">01 — A MODERN TAKE ON TRADITION</p>
@@ -45,17 +64,17 @@
         <h2>Indian craft, made<br>for <em>your</em> moment.</h2>
         <p>Vishah Design celebrates the poetry of Indian wear through modern silhouettes, rich colour, and details
           crafted to be remembered. Made for every invitation, every ritual, every version of you.</p><a
-          class="text-link" href="#journal">OUR STORY <span>→</span></a>
+          class="text-link" href="about.html">OUR STORY <span>→</span></a>
       </div>
     </section>
 
     <section class="collection" id="collection">
       <div class="section-head">
         <p class="eyebrow">THE EDIT</p>
-        <h2>New arrivals</h2><a class="text-link" href="#collection">SHOP ALL <span>→</span></a>
+        <h2>New arrivals</h2><a class="text-link" href="shop.html">SHOP ALL <span>→</span></a>
       </div>
       <div class="products">
-        <article class="product">
+        <article class="product product-card" data-product="Noor Lehenga Set">
           <div class="product-image"><span class="tag">NEW</span><img
               src="https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?auto=format&fit=crop&w=900&q=85"
               alt="Handcrafted festive lehenga" />
@@ -69,7 +88,7 @@
             </div><strong>₹18,500</strong>
           </div>
         </article>
-        <article class="product offset">
+        <article class="product offset product-card" data-product="Meher Kurta Set">
           <div class="product-image"><img
               src="https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?auto=format&fit=crop&w=900&q=85"
               alt="Woman in a draped Indian outfit" />
@@ -83,7 +102,7 @@
             </div><strong>₹9,800</strong>
           </div>
         </article>
-        <article class="product">
+        <article class="product product-card" data-product="Aarohi Saree">
           <div class="product-image"><span class="tag">BESTSELLER</span><img
               src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=85"
               alt="Elegant Indian sari" />
@@ -108,34 +127,63 @@
         <p class="eyebrow">THE RAAG COLLECTION</p>
         <h2>Dress for the<br><em>memories.</em></h2>
         <p>A collection of luminous silks, hand-finished embroidery, and graceful drapes. Each Vishah piece honours the
-          old ways of making while feeling entirely new.</p><a class="button" href="#journal">VIEW THE CAMPAIGN
+          old ways of making while feeling entirely new.</p><a class="button" href="shop.html">VIEW THE CAMPAIGN
           <i>↗</i></a>
       </div>
     </section>
 
-    <section class="categories"><a href="#collection"><img
+    <section class="decision-support">
+      <div class="section-head small-gap">
+        <p class="eyebrow">HOW WE REMOVE GUESSWORK</p>
+        <h2>Built for confident buying.</h2>
+      </div>
+      <div class="support-grid">
+        <article>
+          <p class="eyebrow">01</p>
+          <h3>High-fidelity visuals</h3>
+          <p>Large product imagery, close-ups, and fabric-first storytelling replace the need to touch the garment.</p>
+        </article>
+        <article>
+          <p class="eyebrow">02</p>
+          <h3>Fit precision</h3>
+          <p>Size recommendations, garment measurements, and fit notes help shoppers choose with confidence.</p>
+        </article>
+        <article>
+          <p class="eyebrow">03</p>
+          <h3>Invisible UX</h3>
+          <p>Every tap feels natural, fast, and light so the dress remains the star of the experience.</p>
+        </article>
+        <article>
+          <p class="eyebrow">04</p>
+          <h3>Radical transparency</h3>
+          <p>Fabric specs, care notes, delivery clarity, and simple payment language reduce hesitation at checkout.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="categories"><a href="shop.html"><img
           src="https://images.unsplash.com/photo-1610189045370-42d877165b5f?auto=format&fit=crop&w=1000&q=85"
-          alt="Festive collection" /><span>FESTIVE <i>↗</i></span></a><a href="#collection"><img
+          alt="Festive collection" /><span>FESTIVE <i>↗</i></span></a><a href="shop.html"><img
           src="https://images.unsplash.com/photo-1594633313593-bab3825d0caf?auto=format&fit=crop&w=1000&q=85"
           alt="Everyday Indian wear" /><span>EVERYDAY <i>↗</i></span></a></section>
 
     <section class="journal" id="journal">
       <div class="section-head">
         <p class="eyebrow">NOTES FROM VISHAH</p>
-        <h2>The journal</h2><a class="text-link" href="#journal">VIEW ALL <span>→</span></a>
+        <h2>The journal</h2><a class="text-link" href="journal.html">VIEW ALL <span>→</span></a>
       </div>
       <div class="journal-grid">
         <article>
           <p>PEOPLE — 04.18.26</p>
-          <h3>The art of<br>getting ready</h3><a href="#journal">READ MORE ↗</a>
+          <h3>The art of<br>getting ready</h3><a href="journal-article.html?id=ready">READ MORE ↗</a>
         </article>
         <article>
           <p>CRAFT — 03.29.26</p>
-          <h3>From sketch to<br>hand embroidery</h3><a href="#journal">READ MORE ↗</a>
+          <h3>From sketch to<br>hand embroidery</h3><a href="journal-article.html?id=embroidery">READ MORE ↗</a>
         </article>
         <article>
           <p>OCCASIONS — 03.12.26</p>
-          <h3>The guest list<br>edit</h3><a href="#journal">READ MORE ↗</a>
+          <h3>The guest list<br>edit</h3><a href="journal-article.html?id=guest-list">READ MORE ↗</a>
         </article>
       </div>
     </section>
@@ -150,8 +198,53 @@
   </main>
   <footer><a class="wordmark" href="#top">VISHAH</a>
     <p>© 2026 VISHAH DESIGN</p>
-    <div><a href="#">INSTAGRAM</a><a href="#">PINTEREST</a><a href="#">TIKTOK</a></div>
+    <div><a href="https://www.instagram.com" target="_blank" rel="noreferrer">INSTAGRAM</a><a
+        href="https://www.pinterest.com" target="_blank" rel="noreferrer">PINTEREST</a><a href="https://www.tiktok.com"
+        target="_blank" rel="noreferrer">TIKTOK</a></div>
   </footer>
+
+  <aside id="productPage" class="product-page" aria-hidden="true">
+    <div class="product-page-top">
+      <button id="backToShop" class="back-button" type="button">← BACK TO SHOP</button>
+      <button id="closeDetailPage" class="close-detail-page" type="button" aria-label="Close detail page">×</button>
+    </div>
+    <div class="product-page-inner">
+      <div class="product-page-visual">
+        <img id="pageDetailImage" src="" alt="Selected dress detail" />
+      </div>
+      <div class="product-page-copy">
+        <p class="eyebrow">VISHAH COLLECTION</p>
+        <h2 id="pageDetailTitle">Product name</h2>
+        <div class="detail-page-meta">
+          <span id="pageDetailPrice" class="detail-price">₹0</span>
+          <span id="pageDetailDelivery" class="delivery-pill">5–7 days</span>
+        </div>
+        <p id="pageDetailDescription"></p>
+
+        <div class="detail-page-section">
+          <p class="small-label">SELECT SIZE</p>
+          <div id="pageDetailSizes" class="size-options"></div>
+        </div>
+
+        <div class="page-detail-actions">
+          <button id="pageAddToBag" class="button" type="button">ADD TO BAG</button>
+          <button id="pageBuyNow" class="button alt" type="button">BUY NOW</button>
+        </div>
+
+        <div class="detail-page-section">
+          <p class="small-label">APPROXIMATE DELIVERY</p>
+          <p class="delivery-copy">Quick dispatch within 24 hours. Delivery across India in approximately 5–7 business
+            days.</p>
+        </div>
+
+        <div class="detail-page-section">
+          <p class="small-label">FABRIC & FIT</p>
+          <div id="pageDetailSpecs" class="detail-specs"></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
   <aside id="bag" class="bag" aria-hidden="true">
     <div class="bag-top">
       <h2>Your bag</h2><button id="closeBag" aria-label="Close bag">×</button>
@@ -183,19 +276,6 @@
       <p class="payment-note">Payment option: Cash on delivery. Add Razorpay or Stripe before accepting online payment.
       </p>
     </form>
-  </aside>
-  <aside id="productDetail" class="product-detail" aria-hidden="true">
-    <div class="product-detail-inner"><button id="closeProductDetail" class="close-detail"
-        aria-label="Close product details">×</button><img id="detailImage" src="" alt="Selected dress" />
-      <div class="detail-copy">
-        <p class="eyebrow">SELECT YOUR SIZE</p>
-        <h2 id="detailTitle">Product</h2>
-        <p id="detailPrice" class="detail-price">₹0</p>
-        <p id="detailDescription"></p>
-        <div id="detailSizes" class="size-options"></div><button id="addSelectedToBag" class="button">ADD TO
-          BAG</button>
-      </div>
-    </div>
   </aside>
   <div id="overlay" class="overlay"></div>
   <script src="script.js"></script>

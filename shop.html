@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop All | Vishah Design</title>
+    <meta name="description" content="Shop lehengas, sarees, and kurta sets from Vishah Design." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="shop">
+    <header class="site-header">
+        <a href="index.html" class="brand">VISHAH</a>
+        <nav class="main-nav">
+            <a href="shop.html">Shop</a>
+            <a href="about.html">Our Story</a>
+            <a href="journal.html">Journal</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <a href="shop.html" class="header-icon" aria-label="Search collection">⌕</a>
+            <a href="cart.html" class="header-icon cart-link" aria-label="Cart">BAG <span
+                    id="headerCartCount">0</span></a>
+        </div>
+    </header>
+
+    <main class="page-shell">
+        <section class="page-hero compact">
+            <p class="eyebrow">SHOP THE EDIT</p>
+            <h1>Curated for celebrations.</h1>
+        </section>
+
+        <section class="shop-controls">
+            <div class="filter-row">
+                <label>
+                    Category
+                    <select id="categoryFilter">
+                        <option value="all">All</option>
+                        <option value="Lehenga">Lehenga</option>
+                        <option value="Saree">Saree</option>
+                        <option value="Kurta Set">Kurta Set</option>
+                        <option value="Festive">Festive</option>
+                        <option value="Everyday">Everyday</option>
+                    </select>
+                </label>
+                <label>
+                    Occasion
+                    <select id="occasionFilter">
+                        <option value="all">All</option>
+                        <option value="Festive">Festive</option>
+                        <option value="Wedding">Wedding</option>
+                        <option value="Evening">Evening</option>
+                        <option value="Daywear">Daywear</option>
+                    </select>
+                </label>
+                <label>
+                    Size
+                    <select id="sizeFilter">
+                        <option value="all">All</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </label>
+                <label>
+                    Colour
+                    <select id="colorFilter">
+                        <option value="all">All</option>
+                        <option value="Rosewood">Rosewood</option>
+                        <option value="Champagne">Champagne</option>
+                        <option value="Blush">Blush</option>
+                        <option value="Ivory">Ivory</option>
+                        <option value="Sage">Sage</option>
+                    </select>
+                </label>
+                <label>
+                    Sort by
+                    <select id="sortFilter">
+                        <option value="newest">Newest</option>
+                        <option value="price-low">Price: low to high</option>
+                        <option value="price-high">Price: high to low</option>
+                        <option value="bestseller">Bestsellers</option>
+                    </select>
+                </label>
+            </div>
+            <div class="search-row">
+                <input id="shopSearch" type="search" placeholder="Search by product, colour, or occasion" />
+            </div>
+        </section>
+
+        <section class="product-grid" id="shopGrid"></section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-brand">VISHAH</div>
+        <p>© 2026 Vishah Design</p>
+        <div class="footer-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.pinterest.com" target="_blank" rel="noreferrer">Pinterest</a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noreferrer">TikTok</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

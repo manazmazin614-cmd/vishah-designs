@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart | Vishah Design</title>
+    <meta name="description" content="Review your Vishah Design cart before checkout." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="cart">
+    <header class="site-header">
+        <a href="index.html" class="brand">VISHAH</a>
+        <nav class="main-nav">
+            <a href="shop.html">Shop</a>
+            <a href="about.html">Our Story</a>
+            <a href="journal.html">Journal</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <a href="shop.html" class="header-icon" aria-label="Search collection">⌕</a>
+            <a href="cart.html" class="header-icon cart-link" aria-label="Cart">BAG <span
+                    id="headerCartCount">0</span></a>
+        </div>
+    </header>
+
+    <main class="page-shell cart-shell">
+        <section class="page-hero compact">
+            <p class="eyebrow">BAG</p>
+            <h1>Your selection</h1>
+        </section>
+        <div class="cart-layout">
+            <div class="cart-items" id="cartItemsPage"></div>
+            <aside class="summary-panel">
+                <h3>Order summary</h3>
+                <div class="summary-row"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div>
+                <div class="summary-row"><span>Delivery</span><strong id="cartDelivery">₹0</strong></div>
+                <div class="summary-row"><span>Discount</span><strong id="cartDiscount">-₹0</strong></div>
+                <div class="summary-row total"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+                <form class="discount-form">
+                    <input type="text" placeholder="Discount code" />
+                    <button type="button">Apply</button>
+                </form>
+                <a href="checkout.html" class="button wide">Proceed to checkout</a>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-brand">VISHAH</div>
+        <p>© 2026 Vishah Design</p>
+        <div class="footer-links">
+            <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+            <a href="https://www.pinterest.com" target="_blank" rel="noreferrer">Pinterest</a>
+            <a href="https://www.tiktok.com" target="_blank" rel="noreferrer">TikTok</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

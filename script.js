@@ -434,7 +434,7 @@ function renderCheckoutPage() {
       if (!response.ok) throw new Error(result.message || 'Could not place the order.');
       if (result.ownerWhatsappUrl) window.open(result.ownerWhatsappUrl, '_blank', 'noopener');
       localStorage.removeItem(cartKey);
-      form.innerHTML = `<div class="success-box"><h3>Request sent.</h3><p>Your order request ${result.id} has been sent to Vishah for approval. Once approved, the confirmation will be sent to your WhatsApp number.</p></div>`;
+      form.innerHTML = `<div class="success-box"><h3>Request ready.</h3><p>Your order request ${result.id} is waiting for owner approval. Send the request to Vishah on WhatsApp, then the owner can approve it and send your confirmation.</p><a class="button wide" href="${result.ownerWhatsappUrl || '#'}" target="_blank" rel="noreferrer">SEND REQUEST TO OWNER ON WHATSAPP ↗</a></div>`;
       updateHeaderCartCount();
     } catch (error) {
       const message = document.createElement('p');
